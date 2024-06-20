@@ -1,8 +1,25 @@
-import React from 'react';
-import Main from "./screens/Main";
+import 'react-native-gesture-handler';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-export default function App() {
+import Home from './screens/Home';
+import Main from './screens/Main';
+
+const Stack = createStackNavigator();
+
+function App() {
   return (
-    <Main />
-  )
+    <NavigationContainer>
+    <Stack.NavigatinitialRouteName='Home'
+				screenOptions={{
+					headerShown: false,
+				}}>
+				<Stack.Screen name='Home' component={Home} />
+				<Stack.Screen name='Main' component={Main} />
+			</Stack.Navigator>
+		</NavigationContainer>
+  );
 }
+
+export defalt App;
